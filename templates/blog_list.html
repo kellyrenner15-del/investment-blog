@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}ブログ一覧 - 堀江式 投資講座{% endblock %}
+
+{% block description %}投資に関するブログ記事一覧。初心者向けガイドから実践的な投資戦略まで。{% endblock %}
+
+{% block content %}
+<div class="blog-list-section">
+    <div class="container">
+        <h1 style="font-size: 2rem; margin-bottom: 2rem; font-weight: 800;">ブログ一覧</h1>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+            {% for post in posts %}
+            <article class="blog-card">
+                <div class="blog-header">
+                    <span class="blog-category">{{ post.category }}</span>
+                    <span class="blog-date">{{ post.date }}</span>
+                </div>
+                <h2 class="blog-title" style="font-size: 1.2rem;">
+                    <a href="/blog/{{ post.slug }}">{{ post.title }}</a>
+                </h2>
+                <p class="blog-excerpt">{{ post.excerpt }}</p>
+                <div class="blog-footer">
+                    <span class="read-time">⏱️ {{ post.read_time }}分</span>
+                    <a href="/blog/{{ post.slug }}" class="read-more">続きを読む →</a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+
+        <!-- ページネーション -->
+        {% if total_pages > 1 %}
+        <div style="display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
+            {% if page > 1 %}
+            <a href="/blog?page=1" style="padding: 0.6rem 1rem; border: 1px solid #ddd; border-radius: 4px; text-decoration: none; color: #333;">最初</a>
+            <a href="/blog?page={{ page-1 }}" style="padding: 0.6rem 1rem; border: 1px solid #ddd; border-radius: 4px; text-decoration: none; color: #333;">前へ</a>
+            {% endif %}
+            
+            <span style="padding: 0.6rem 1rem; background: #1565c0; color: white; border-radius: 4px;">{{ page }}</span>
+            
+            {% if page < total_pages %}
+            <a href="/blog?page={{ page+1 }}" style="padding: 0.6rem 1rem; border: 1px solid #ddd; border-radius: 4px; text-decoration: none; color: #333;">次へ</a>
+            <a href="/blog?page={{ total_pages }}" style="padding: 0.6rem 1rem; border: 1px solid #ddd; border-radius: 4px; text-decoration: none; color: #333;">最後</a>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<style>
+    .blog-list-section {
+        padding: 40px 20px;
+        background: white;
+    }
+</style>
+{% endblock %}

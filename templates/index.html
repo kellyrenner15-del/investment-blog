@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% block title %}堀江式 投資講座 - 初心者向け株式投資メソッド{% endblock %}
+
+{% block description %}初心者から経験者まで学べる「誰でも実践できる株式投資メソッド」。無料オンラインで基礎から実践まで学べます。{% endblock %}
+
+{% block content %}
+<!-- ヘッダー部分 -->
+<header class="hero-header">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">堀江式 投資講座</h1>
+            <p class="hero-subtitle">初心者から経験者まで学べる<br>「誰でも実践できる株式投資メソッド」</p>
+        </div>
+    </div>
+</header>
+
+<!-- CTA エリア -->
+<section class="cta-section">
+    <div class="container">
+        <div class="search-box">
+            <!-- 🖼️ 添加图片 -->
+            <img src="/static/images/hero-image.jpg" alt="投資講座イメージ" style="width: 100%; max-width: 500px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+
+            <h2 style="margin-top: 0;">投資の最初の一歩を踏み出そう</h2>
+            <p style="font-size: 1rem; color: #666;">20年以上の投資経験を持つプロが、初心者向けに再現性の高い投資メソッドを無料で公開。</p>
+
+            <a href="https://line.me/R/ti/p/%40YOUR_LINE_ID_HERE" class="cta-button-large" target="_blank" rel="noopener noreferrer">
+                LINEで無料登録して講座を受け取る
+            </a>
+
+            <p class="cta-note">受講は完全無料。営業行為・勧誘・銘柄推奨などは��切ありません。</p>
+        </div>
+    </div>
+</section>
+
+<!-- 特徴セクション -->
+<section class="features-section">
+    <div class="container">
+        <h2 class="section-title">講座の特徴</h2>
+        <ul class="features-list">
+            <li>✔ 投資経験ゼロでも理解できる段階的なカリキュラム</li>
+            <li>✔ 実例をもとにした「失敗しない考え方」</li>
+            <li>✔ 株選び・リスク管理・心理面のすべてをカバー</li>
+            <li>✔ LINEで簡単に相談・質問ができるサポート付き</li>
+        </ul>
+    </div>
+</section>
+
+<!-- 3 列卡片 -->
+<section class="cards-section">
+    <div class="container">
+        <div class="cards-grid">
+            {% for feature in features %}
+            <div class="feature-card">
+                <div class="feature-icon">{{ feature.icon }}</div>
+                <h3>{{ feature.title }}</h3>
+                <p>{{ feature.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- 学習ステップ -->
+<section class="steps-section">
+    <div class="container">
+        <h2 class="section-title">学習ステップ</h2>
+        <ul class="steps-list">
+            <li><strong>① 投資の基本構造とリスクの理解</strong></li>
+            <li><strong>② 優良企業の見つけ方と判断ポイント</strong></li>
+            <li><strong>③ ポートフォリオ戦略の構築</strong></li>
+            <li><strong>④ 継続的に利益を出すための考え方</strong></li>
+        </ul>
+    </div>
+</section>
+
+<!-- 対象者 -->
+<section class="target-section">
+    <div class="container">
+        <h2 class="section-title">こんな方におすすめ</h2>
+        <ul class="target-list">
+            <li>・これから投資を始めたいが、何から学べば良いかわからない方</li>
+            <li>・独学でやってきたけど成果が出ず、基礎を見直したい方</li>
+            <li>・長期で資産形成を考えているが、正しい方法を知りたい方</li>
+        </ul>
+    </div>
+</section>
+
+<!-- CTA 再掲 -->
+<section class="cta-repeat-section">
+    <div class="container">
+        <a href="https://line.me/R/ti/p/%40YOUR_LINE_ID_HERE" class="cta-button-large" target="_blank" rel="noopener noreferrer">
+            今すぐ無料で学習を始める
+        </a>
+        <p class="cta-note">※ 受講は完全無料。営業行為・勧誘・銘柄推奨などは一切ありません。</p>
+    </div>
+</section>
+
+<!-- 最新記事 -->
+<section class="blog-section">
+    <div class="container">
+        <h2 class="section-title">最新の投資ガイド</h2>
+        <div class="blog-grid">
+            {% for post in posts %}
+            <article class="blog-card">
+                <div style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); height: 150px; border-radius: 8px 8px 0 0; display: flex; align-items: center; justify-content: center;">
+                    <span style="font-size: 3rem;">📰</span>
+                </div>
+                <div style="padding: 15px;">
+                    <div class="blog-header">
+                        <span class="blog-category">{{ post.category }}</span>
+                        <span class="blog-date">{{ post.date }}</span>
+                    </div>
+                    <h3 class="blog-title"><a href="/blog/{{ post.slug }}">{{ post.title }}</a></h3>
+                    <p class="blog-excerpt">{{ post.excerpt }}</p>
+                    <div class="blog-footer">
+                        <span class="read-time">⏱️ {{ post.read_time }}分</span>
+                        <a href="/blog/{{ post.slug }}" class="read-more">続きを読む →</a>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        <div class="view-all">
+            <a href="/blog" class="view-all-button">すべての記事を見る</a>
+        </div>
+    </div>
+</section>
+
+<!-- 免責事項 -->
+<section class="disclaimer-section">
+    <div class="container">
+        <p>本講座は投資教育を目的としたものであり、特定の金融商品の売買を推奨するものではありません。</p>
+    </div>
+</section>
+{% endblock %}

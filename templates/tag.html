@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}#{{ tag_name }}に関する記事 - 堀江式 投資講座{% endblock %}
+
+{% block description %}{{ tag_name }}に関する投資記事。{{ tag_name }}について詳しく学べます。{% endblock %}
+
+{% block content %}
+<div class="tag-section">
+    <div class="container">
+        <h1 style="font-size: 2rem; margin-bottom: 2rem; font-weight: 800;">#{{ tag_name }}</h1>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            {% for post in posts %}
+            <article style="background: white; border: 1px solid #e0e0e0; padding: 1.5rem; border-radius: 8px;">
+                <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                    <span style="background: linear-gradient(135deg, #1565c0, #0d47a1); color: white; padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">{{ post.category }}</span>
+                    <span style="font-size: 0.85rem; color: #999;">{{ post.date }}</span>
+                </div>
+                <h2 style="font-size: 1.15rem; margin: 0 0 0.8rem 0;">
+                    <a href="/blog/{{ post.slug }}" style="color: #222; text-decoration: none;">{{ post.title }}</a>
+                </h2>
+                <p style="color: #666; line-height: 1.6; margin-bottom: 1rem;">{{ post.excerpt }}</p>
+                <a href="/blog/{{ post.slug }}" style="color: #1565c0; text-decoration: none; font-weight: 600;">続きを読む →</a>
+            </article>
+            {% endfor %}
+        </div>
+
+        {% if not posts %}
+        <div style="text-align: center; padding: 3rem 0; color: #999;">
+            <p>このタグの記事はまだありません。</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<style>
+    .tag-section {
+        padding: 40px 20px;
+        background: white;
+    }
+</style>
+{% endblock %}

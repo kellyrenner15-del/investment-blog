@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}お問い合わせ - 堀江式 投資講座{% endblock %}
+
+{% block description %}ご質問やご意見はこちらからお気軽にお問い合わせください。{% endblock %}
+
+{% block content %}
+<div class="contact-section">
+    <div class="container">
+        <h1 style="font-size: 2rem; margin-bottom: 2rem; font-weight: 800;">お問い合わせ</h1>
+
+        <div style="background: white; border: 1px solid #e0e0e0; padding: 2rem; border-radius: 8px; max-width: 600px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <p style="font-size: 1.1rem; color: #333; margin-bottom: 1.5rem;">
+                    LINEでお気軽にお問い合わせください
+                </p>
+                <a href="https://line.me/R/ti/p/%40YOUR_LINE_ID_HERE" class="cta-button-large" target="_blank" rel="noopener noreferrer" style="display: inline-block;">
+                    LINE で相談する
+                </a>
+                <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">
+                    ※ 情報入力不要。直接お話しできます。
+                </p>
+            </div>
+
+            <div style="border-top: 1px solid #e0e0e0; padding-top: 2rem;">
+                <h2 style="font-size: 1.2rem; margin-bottom: 1rem; color: #1565c0;">返信について</h2>
+                <p style="color: #666; line-height: 1.6;">
+                    LINEでのお問い合わせは通常24～48時間以内にご返信させていただきます。お急ぎの場合はお知らせください。
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .contact-section {
+        padding: 40px 20px;
+        background: white;
+    }
+</style>
+{% endblock %}

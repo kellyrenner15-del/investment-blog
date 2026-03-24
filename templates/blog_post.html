@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }} - 堀江式 投資講座{% endblock %}
+
+{% block description %}{{ post.meta_description }}{% endblock %}
+
+{% block content %}
+<article class="blog-post-section">
+    <div class="container">
+        <header style="margin-bottom: 3rem;">
+            <h1 style="font-size: 2.2rem; margin-bottom: 1rem; font-weight: 800;">{{ post.title }}</h1>
+            
+            <div style="display: flex; gap: 2rem; flex-wrap: wrap; color: #666; font-size: 0.95rem; margin-bottom: 2rem;">
+                <span>📅 {{ post.date }}</span>
+                <span>👤 {{ post.author }}</span>
+                <span>📂 {{ post.category }}</span>
+                <span>⏱️ {{ post.read_time }}分</span>
+            </div>
+
+            <div style="background: #f2f8ff; border-left: 5px solid #1e88e5; padding: 1.5rem; border-radius: 4px; margin-bottom: 2rem;">
+                <p style="margin: 0; font-size: 0.95rem; color: #333; line-height: 1.6;">{{ post.excerpt }}</p>
+            </div>
+        </header>
+
+        <div style="font-size: 1.05rem; line-height: 1.8; color: #333; margin-bottom: 3rem;">
+            {{ post.content | safe }}
+        </div>
+
+        <!-- 著者情報 -->
+        <div style="background: white; border: 1px solid #e0e0e0; padding: 2rem; border-radius: 8px; margin-bottom: 3rem;">
+            <div style="display: grid; grid-template-columns: 100px 1fr; gap: 2rem; align-items: start;">
+                <div style="text-align: center;">
+                    <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                        <img src="/static/images/logo.png" alt="{{ post.author }}" style="width: 60px; height: 60px; object-fit: cover;">
+                    </div>
+                </div>
+                <div>
+                    <h3 style="margin: 0 0 0.5rem 0; font-size: 1.1rem;">著者について</h3>
+                    <p style="margin: 0 0 0.5rem 0; font-weight: 700;">{{ post.author }}</p>
+                    <p style="margin: 0; font-size: 0.9rem; color: #666; line-height: 1.6;">{{ post.author_credentials }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 関連記事 -->
+        {% if related_posts %}
+        <div style="border-top: 2px solid #e0e0e0; padding-top: 2rem;">
+            <h2 style="font-size: 1.4rem; margin-bottom: 1.5rem; color: #1565c0;">関連記事</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                {% for related in related_posts %}
+                <div style="background: white; border: 1px solid #e0e0e0; padding: 1.5rem; border-radius: 8px;">
+                    <h3 style="font-size: 1rem; margin-bottom: 0.8rem;">
+                        <a href="/blog/{{ related.slug }}" style="color: #222; text-decoration: none;">{{ related.title }}</a>
+                    </h3>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.6;">{{ related.excerpt }}</p>
+                    <a href="/blog/{{ related.slug }}" style="color: #1565c0; text-decoration: none; font-weight: 600;">続きを読む →</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</article>
+
+<style>
+    .blog-post-section {
+        padding: 40px 20px;
+        background: white;
+    }
+</style>
+{% endblock %}
