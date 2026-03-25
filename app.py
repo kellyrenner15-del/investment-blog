@@ -37,7 +37,7 @@ BLOG_POSTS = [
         </ul>
 
         <h3>4. 最初の投資のコツ</h3>
-        <p>最初��小額から始めることをお勧めします。市場の動きを観察しながら、徐々に知識と経験を積み重ねることが成功の鍵です。</p>
+        <p>最初は小額から始めることをお勧めします。市場の動きを観察しながら、徐々に知識と経験を積み重ねることが成功の鍵です。</p>
         ''',
         'author': '堀江貴文',
         'author_credentials': '20年以上の投資分析経験を持つ独立系投資家。CFA認定アナリスト。',
@@ -97,7 +97,7 @@ BLOG_POSTS = [
         'meta_description': 'ポートフォリオ分散投資ガイド。資産配分戦略とリスク低減の方法',
         'content': '''
         <h2>分散投資の科学的根拠</h2>
-        <p>ノーベル���済学賞を受賞したハリー・マーコウィッツの現代ポートフォリオ理論によれば、異なる資産への適切な配分により、全体的なリスクを低減することが可能です。</p>
+        <p>ノーベル経済学賞を受賞したハリー・マーコウィッツの現代ポートフォリオ理論によれば、異なる資産への適切な配分により、全体的なリスクを低減することが可能です。</p>
 
         <h3>効率的フロンティア</h3>
         <p>効率的フロンティアとは、与えられたリスクレベルで最大のリターンを得られる投資ポートフォリオの集合です。この理論に基づいて、最適なポートフォリオを構築することができます。</p>
@@ -211,7 +211,7 @@ BLOG_POSTS = [
         <p>プロの投資家とアマチュアの最大の違いは、感情をコントロールする能力です。</p>
         ''',
         'author': '堀江貴文',
-        'author_credentials': '行動経済学の専門家。心理学の観点から投資を研究。',
+        'author_credentials': '行動経済学の専門家���心理学の観点から投資を研究。',
         'date': '2026-02-20',
         'category': '投資戦略',
         'tags': ['心理学', '投資', 'バイアス'],
@@ -249,7 +249,7 @@ BLOG_POSTS = [
         </ul>
 
         <h3>テクニカル分析の限界</h3>
-        <p>テクニカル分析は参考情報です。100%の精度はなく、ファンダメンタル分析と併用することが重要です。</p>
+        <p>テクニカル分析は参考情報です。100%の精度はなく、ファンダメンタル分析���併用することが重要です。</p>
         ''',
         'author': '堀江貴文',
         'author_credentials': 'テクニカル分析の経験者。チャート分析で15年の経験。',
@@ -273,7 +273,7 @@ BLOG_POSTS = [
             <li><strong>PER（株価収益率）：</strong>利益に対する株価の倍率</li>
             <li><strong>PBR（株価純資産倍率）：</strong>純資産に対する株価の倍率</li>
             <li><strong>配当利回り：</strong>株価に対する配当金の割合</li>
-            <li><strong>ROE（自己���本利益率）：</strong>企業の収益性</li>
+            <li><strong>ROE（自己資本利益率）：</strong>企業の収益性</li>
             <li><strong>負債比率：</strong>企業の財務健全性</li>
         </ul>
 
@@ -312,7 +312,7 @@ BLOG_POSTS = [
         'meta_description': 'IPO投資ガイド。新規上場銘柄への投資方法',
         'content': '''
         <h2>IPOとは</h2>
-        <p>IPO（Initial Public Offering）は、これまで非公開だった企業が初めて株式を公開する際の新規公開株式のことです。</p>
+        <p>IPO（Initial Public Offering）は���これまで非公開だった企業が初めて株式を公開する際の新規公開株式のことです。</p>
 
         <h3>IPO投資の特徴</h3>
         <ul>
@@ -361,7 +361,7 @@ BLOG_POSTS = [
 
         <h3>米国株の特徴</h3>
         <ul>
-            <li><strong>���引量が多い：</strong>流動性が高く取引しやすい</li>
+            <li><strong>取引量が多い：</strong>流動性が高く取引しやすい</li>
             <li><strong>優良企業が多い：</strong>Apple、Microsoft、Amazonなど</li>
             <li><strong>配当が高い：</strong>多くの企業が安定した配当を提供</li>
             <li><strong>為替リスク：</strong>ドル円相場の影響を受ける</li>
@@ -495,7 +495,7 @@ FEATURE_CARDS = [
 
 @app.route("/")
 def home():
-    posts = BLOG_POSTS[:6]  # 首页显示前6篇
+    posts = BLOG_POSTS[:6]
     return render_template("index.html", posts=posts, features=FEATURE_CARDS)
 
 
@@ -549,7 +549,6 @@ def disclaimer():
 
 @app.route("/learning")
 def learning():
-    # 按分类组织学习内容
     categories = {}
     for post in BLOG_POSTS:
         cat = post['category']
@@ -598,4 +597,4 @@ def server_error(error):
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, debug=False)
+    app.run(host="0.0.0.0", port=5000, debug=False)
