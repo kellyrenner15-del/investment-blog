@@ -849,3 +849,185 @@ article,
 [style*="background: #1565c0"]{
   background: var(--brand-700) !important;
 }
+/* ========================================
+   Wall Street watermark (white research report style)
+   - Keep navbar/footer as-is
+   - Add subtle grid + tape + “market glow” watermark
+   Append at END of file
+   ======================================== */
+
+:root{
+  --ws-ink:#0b3f5f;                 /* deep blue-gray */
+  --ws-ink-2:#1565c0;               /* accent blue */
+  --ws-grid:rgba(11,63,95,.055);    /* very subtle grid */
+  --ws-tape:rgba(21,101,192,.085);  /* subtle tape line */
+  --ws-tape2:rgba(11,63,95,.075);   /* second tape */
+  --ws-gold:rgba(234,179,8,.10);    /* subtle gold */
+  --ws-bg:#ffffff;
+  --ws-paper:#ffffff;
+}
+
+/* White paper base + very subtle top glow */
+body{
+  background:
+    radial-gradient(900px 420px at 20% -140px, rgba(184,198,207,.55) 0%, rgba(255,255,255,0) 60%),
+    radial-gradient(700px 360px at 90% -180px, rgba(21,101,192,.10) 0%, rgba(255,255,255,0) 62%),
+    linear-gradient(180deg, rgba(246,248,251,1) 0%, rgba(255,255,255,1) 55%, rgba(255,255,255,1) 100%);
+}
+
+/* Ensure main stays clean; watermark lives per-section (not behind navbar/footer) */
+main{
+  background: transparent;
+}
+
+/* Apply watermark only on content sections */
+.about-section,
+.category-section,
+.tag-section,
+.blog-list-section,
+.blog-post-section,
+.learning-section,
+.contact-section,
+.privacy-section,
+.terms-section,
+.sitemap-section,
+.lp14,
+.hero-header,
+.cta-section,
+.features-section,
+.cards-section,
+.steps-section,
+.target-section,
+.blog-section{
+  position: relative;
+  isolation: isolate;
+  background: transparent !important;
+}
+
+/* Wall Street “watermark”: grid + diagonal market tape + tiny gold accents */
+.about-section::before,
+.category-section::before,
+.tag-section::before,
+.blog-list-section::before,
+.blog-post-section::before,
+.learning-section::before,
+.contact-section::before,
+.privacy-section::before,
+.terms-section::before,
+.sitemap-section::before,
+.lp14::before,
+.hero-header::before,
+.cta-section::before,
+.features-section::before,
+.cards-section::before,
+.steps-section::before,
+.target-section::before,
+.blog-section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  opacity:.65;
+
+  background:
+    /* 1) grid */
+    linear-gradient(var(--ws-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--ws-grid) 1px, transparent 1px),
+
+    /* 2) “market tape” diagonal bands (very soft) */
+    linear-gradient(115deg,
+      rgba(21,101,192,0) 0%,
+      var(--ws-tape) 18%,
+      rgba(21,101,192,0) 34%,
+      var(--ws-tape2) 58%,
+      rgba(11,63,95,0) 72%,
+      rgba(21,101,192,.07) 88%,
+      rgba(21,101,192,0) 100%),
+
+    /* 3) subtle gold highlight (finance feel, not flashy) */
+    radial-gradient(260px 180px at 12% 18%, var(--ws-gold) 0%, rgba(234,179,8,0) 70%),
+    radial-gradient(240px 160px at 88% 26%, rgba(234,179,8,.07) 0%, rgba(234,179,8,0) 72%);
+
+  background-size:
+    56px 56px,
+    56px 56px,
+    100% 100%,
+    100% 100%,
+    100% 100%;
+  background-position:
+    center,
+    center,
+    center,
+    center,
+    center;
+}
+
+/* Keep content readable: cards are “paper” on top of watermark */
+.search-box,
+.blog-card,
+.feature-card,
+.lp14__blueCard,
+.lp14__stats,
+.risk,
+article{
+  background: rgba(255,255,255,.94);
+  border: 1px solid rgba(16,24,40,.10);
+  box-shadow: 0 10px 22px rgba(0,0,0,.08);
+  backdrop-filter: blur(2px);
+}
+
+/* Optional: unify headings to deep ink for research tone */
+.section-title,
+.lp14__title,
+.hero-title{
+  color: var(--ws-ink);
+}
+
+/* Optional: make the hero gradient slightly more “research” */
+.hero-header{
+  background: transparent !important;
+}
+/* ========================================
+   Wall Street watermark - intensity 3 (stronger)
+   Append at END of file to override previous settings
+   ======================================== */
+:root{
+  --ws-grid:rgba(11,63,95,.085);    /* was .055 */
+  --ws-tape:rgba(21,101,192,.125);  /* was .085 */
+  --ws-tape2:rgba(11,63,95,.11);    /* was .075 */
+  --ws-gold:rgba(234,179,8,.14);    /* was .10 */
+}
+
+.about-section::before,
+.category-section::before,
+.tag-section::before,
+.blog-list-section::before,
+.blog-post-section::before,
+.learning-section::before,
+.contact-section::before,
+.privacy-section::before,
+.terms-section::before,
+.sitemap-section::before,
+.lp14::before,
+.hero-header::before,
+.cta-section::before,
+.features-section::before,
+.cards-section::before,
+.steps-section::before,
+.target-section::before,
+.blog-section::before{
+  opacity:.88; /* was .65 */
+}
+
+/* Keep readability: slightly strengthen card edge so text stays crisp */
+.search-box,
+.blog-card,
+.feature-card,
+.lp14__blueCard,
+.lp14__stats,
+.risk,
+article{
+  border: 1px solid rgba(16,24,40,.12);
+  box-shadow: 0 14px 30px rgba(0,0,0,.10);
+}
