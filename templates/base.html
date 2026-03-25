@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <meta name="description" content="{% block description %}堀江貴文の投資ブログ。初心者から経験者まで学べる株式投資講座。{% endblock %}">
-    <meta name="keywords" content="投資, 株式投資, 初心者向け, 投資ガイド">
-    
-    <meta property="og:title" content="{% block og_title %}堀江貴文の投資ブログ{% endblock %}">
-    <meta property="og:description" content="{% block og_description %}初心者から経験者まで学べる株式投資講座{% endblock %}">
+
+    <meta name="description" content="{% block description %}日本株の神様の投資指南。投資教育を目的とした情報を提供します。投資には元本割れのリスクがあります。{% endblock %}">
+    <meta name="keywords" content="投資, 株式投資, 初心者向け, 投資ガイド, 投資指南">
+
+    <meta property="og:title" content="{% block og_title %}日本株の神様{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}投資教育を目的とした情報提供（投資には元本割れのリスクがあります）{% endblock %}">
     <meta property="og:image" content="/static/images/logo.png">
     <meta property="og:type" content="website">
 
-    <title>{% block title %}堀江貴文の投資ブログ{% endblock %}</title>
+    <title>{% block title %}日本株の神様{% endblock %}</title>
     <link rel="canonical" href="{{ request.url }}">
     <link rel="shortcut icon" href="/static/images/logo.png">
     <link rel="apple-touch-icon" href="/static/images/logo.png">
@@ -26,14 +26,14 @@
             <div class="navbar-brand">
                 <a href="/" class="logo">
                     <img src="/static/images/logo.png" alt="ロゴ" class="logo-img">
-                    <span class="logo-text">堀江式 投資講座</span>
+                    <span class="logo-text">日本株の神様</span>
                 </a>
             </div>
 
             <nav class="nav-links">
                 <a href="/">ホーム</a>
                 <a href="/learning">学習センター</a>
-                <a href="/blog">ブログ</a>
+                <a href="/blog">投資指南</a>
                 <a href="/about">について</a>
                 <a href="/contact">お問い合わせ</a>
             </nav>
@@ -49,23 +49,23 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <!-- 第 1 列：关于 -->
+                <!-- 第 1 列 -->
                 <div class="footer-section">
-                    <h3>堀江式 投資講座</h3>
-                    <p>20年以上の投資分析経験に基づいた信頼できる投資教育を提供します。</p>
+                    <h3>日本株の神様</h3>
+                    <p>投資教育を目的とした情報を提供します。投資には元本割れのリスクがあります。</p>
                 </div>
 
-                <!-- 第 2 列：导航 -->
+                <!-- 第 2 列 -->
                 <div class="footer-section">
                     <h3>ナビゲーション</h3>
                     <ul>
                         <li><a href="/">ホーム</a></li>
-                        <li><a href="/blog">ブログ</a></li>
+                        <li><a href="/blog">投資指南</a></li>
                         <li><a href="/learning">学習センター</a></li>
                     </ul>
                 </div>
 
-                <!-- 第 3 列：法律情報 -->
+                <!-- 第 3 列 -->
                 <div class="footer-section">
                     <h3>法律情報</h3>
                     <ul>
@@ -76,9 +76,16 @@
                 </div>
             </div>
 
+            <!-- 合規：教育用途 + 風險提示（全站固定） -->
+            <div class="footer-disclaimer" style="margin-top: 10px; font-size: 0.85rem; line-height: 1.6;">
+                <p style="margin: 0; opacity: 0.85;">
+                    本サイトの内容は情報提供・教育目的であり、投資助言・勧誘を目的とするものではありません。投資には元本割れのリスクがあります。
+                </p>
+            </div>
+
             <!-- 底部 -->
             <div class="footer-bottom">
-                <p>&copy; 2026 堀江式 投資講座 | <a href="/privacy">プライバシーポリシー</a></p>
+                <p>&copy; 2026 日本株の神様 | <a href="/privacy">プライバシーポリシー</a></p>
             </div>
         </div>
     </footer>

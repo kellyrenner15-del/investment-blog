@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}ブログ一覧 - 堀江式 投資講座{% endblock %}
+{% block title %}投資指南一覧 - 日本株の神様{% endblock %}
 
-{% block description %}投資に関するブログ記事一覧。初心者向けガイドから実践的な投資戦略まで。{% endblock %}
+{% block description %}投資に関する記事一覧。初心者向けガイドから実践的な投資戦略まで。投資には元本割れのリスクがあります。{% endblock %}
 
 {% block content %}
 <div class="blog-list-section">
     <div class="container">
-        <h1 style="font-size: 2rem; margin-bottom: 2rem; font-weight: 800;">ブログ一覧</h1>
+        <h1 style="font-size: 2rem; margin-bottom: 2rem; font-weight: 800;">投資指南一覧</h1>
         
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
             {% for post in posts %}
