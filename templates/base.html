@@ -5,20 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <!-- SEO -->
     <meta name="description" content="{% block description %}日本株の神様の投資指南。投資教育を目的とした情報を提供します。投資には元本割れのリスクがあります。{% endblock %}">
     <meta name="keywords" content="投資, 株式投資, 初心者向け, 投資ガイド, 投資指南">
 
+    <!-- Open Graph (share) -->
     <meta property="og:title" content="{% block og_title %}日本株の神様{% endblock %}">
     <meta property="og:description" content="{% block og_description %}投資教育を目的とした情報提供（投資には元本割れのリスクがあります）{% endblock %}">
-    <meta property="og:image" content="/static/images/logo.png">
+    <meta property="og:image" content="https://jue-jiang.com/static/images/logo.png">
+    <meta property="og:url" content="https://jue-jiang.com{{ request.path }}">
     <meta property="og:type" content="website">
 
+    <!-- Title / Canonical -->
     <title>{% block title %}日本株の神様{% endblock %}</title>
-    <link rel="canonical" href="{{ request.url }}">
+    <link rel="canonical" href="https://jue-jiang.com{{ request.path }}">
+
+    <!-- Icons / CSS -->
     <link rel="shortcut icon" href="/static/images/logo.png">
     <link rel="apple-touch-icon" href="/static/images/logo.png">
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
+
 <body>
     <!-- ナビゲーション -->
     <header class="navbar">
@@ -60,7 +67,7 @@
                     <h3>ナビゲーション</h3>
                     <ul>
                         <li><a href="/">ホーム</a></li>
-                        <li><a href="/blog">投資指南</a></li>
+                        <li><a href="/blog">投資���南</a></li>
                         <li><a href="/learning">学習センター</a></li>
                     </ul>
                 </div>
@@ -90,7 +97,7 @@
         </div>
     </footer>
 
-    <!-- 固定LINE按钮 -->
+    <!-- 固定LINE按钮：把 YOUR_LINE_ID_HERE 替換成你的真實 LINE ID -->
     <a href="https://line.me/R/ti/p/%40YOUR_LINE_ID_HERE" class="fixed-line-btn" target="_blank" rel="noopener noreferrer">
         無料で相談する
     </a>
