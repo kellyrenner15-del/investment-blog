@@ -1051,3 +1051,18 @@ article{
 .lp14__lineIcon {
   flex: 0 0 auto;
 }
+
+/* Short risk note under CTA */
+.lp14__riskShort{
+  margin: 12px 0 0;
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.lp14__riskLink{
+  color: #2563eb;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
