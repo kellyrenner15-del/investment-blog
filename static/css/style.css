@@ -1031,3 +1031,23 @@ article{
   border: 1px solid rgba(16,24,40,.12);
   box-shadow: 0 14px 30px rgba(0,0,0,.10);
 }
+/* LINE CTA: center text in the bar */
+.lp14__lineBar {
+  display: flex;
+  align-items: center;        /* 垂直置中 */
+  justify-content: center;    /* 水平置中（以整條按鈕為基準） */
+  gap: 12px;                  /* icon 與文字間距 */
+  text-align: center;
+  width: 100%;
+}
+
+/* 文字本身置中顯示 */
+.lp14__lineText {
+  display: block;
+  text-align: center;
+}
+
+/* 如果 icon 用的是背景圖/固定寬度，避免它把文字推歪 */
+.lp14__lineIcon {
+  flex: 0 0 auto;
+}
