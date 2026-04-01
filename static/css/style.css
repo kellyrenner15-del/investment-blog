@@ -1066,3 +1066,37 @@ article{
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+/* Make ALL text inside the white card bold */
+.lp14__blueCard {
+  font-weight: 700;
+}
+/* Make blog cards consistent (same spec): layout + height + footer at bottom */
+.blog-card{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  padding: 22px 24px;
+  min-height: 220px;          /* 可依你想要的高度調整，例如 240/260 */
+  border-radius: 12px;
+  background: rgba(255,255,255,.94);
+  border: 1px solid rgba(16,24,40,.12);
+  box-shadow: 0 14px 30px rgba(0,0,0,.10);
+}
+
+/* Footer stick to bottom so every card looks aligned */
+.blog-card .blog-footer{
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Optional: keep title/excerpt spacing stable */
+.blog-card .blog-title{
+  margin: 0;
+}
+.blog-card .blog-excerpt{
+  margin: 0;
+}

@@ -7,7 +7,7 @@
 {% block content %}
 <div class="tag-section">
     <div class="container">
-        <h1 style="font-size: 2rem; margin-bottom: 2rem; font-weight: 800;">#{{ tag_name }}</h1>
+        <h1 style="font-size: 2rem; margin-bottom: 2rem; font-weight: 800;">{{ tag_name }}</h1>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
             {% for post in posts %}

@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
-{% block title %}投資指南一覧 - 日本株の神様{% endblock %}
+{% block title %}投資コラム一覧 - 日本株の神様{% endblock %}
 
 {% block description %}投資に関する記事一覧。初心者向けガイドから実践的な投資戦略まで。投資には元本割れのリスクがあります。{% endblock %}
 
 {% block content %}
 <div class="blog-list-section">
     <div class="container">
-        <h1 style="font-size: 2rem; margin-bottom: 2rem; font-weight: 800;">投資指南一覧</h1>
-        
+        <h1 style="font-size: 2rem; margin-bottom: 2rem; font-weight: 800;">投資コラム一覧</h1>
+
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
             {% for post in posts %}
             <article class="blog-card">
@@ -21,7 +21,7 @@
                 </h2>
                 <p class="blog-excerpt">{{ post.excerpt }}</p>
                 <div class="blog-footer">
-                    <span class="read-time">⏱️ {{ post.read_time }}分</span>
+
                     <a href="/blog/{{ post.slug }}" class="read-more">続きを読む →</a>
                 </div>
             </article>
@@ -35,9 +35,9 @@
             <a href="/blog?page=1" style="padding: 0.6rem 1rem; border: 1px solid #ddd; border-radius: 4px; text-decoration: none; color: #333;">最初</a>
             <a href="/blog?page={{ page-1 }}" style="padding: 0.6rem 1rem; border: 1px solid #ddd; border-radius: 4px; text-decoration: none; color: #333;">前へ</a>
             {% endif %}
-            
+
             <span style="padding: 0.6rem 1rem; background: #1565c0; color: white; border-radius: 4px;">{{ page }}</span>
-            
+
             {% if page < total_pages %}
             <a href="/blog?page={{ page+1 }}" style="padding: 0.6rem 1rem; border: 1px solid #ddd; border-radius: 4px; text-decoration: none; color: #333;">次へ</a>
             <a href="/blog?page={{ total_pages }}" style="padding: 0.6rem 1rem; border: 1px solid #ddd; border-radius: 4px; text-decoration: none; color: #333;">最後</a>
